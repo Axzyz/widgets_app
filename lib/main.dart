@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp( 
-      theme: AppTheme(selectedColor: 4).getTheme(),
+      theme: AppTheme(selectedColor: 0).getTheme(),
       home: Scaffold(
         body: HomeScreen()
       ),
