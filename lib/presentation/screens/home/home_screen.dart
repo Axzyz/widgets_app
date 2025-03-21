@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Widgets Flutter')),
-      body: _HomeView(),
+      body: const _HomeView(),
     );
   }
 }
@@ -42,10 +43,12 @@ class _CustomListTile extends StatelessWidget {
       leading: Icon(menuItem.icon),
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
-      trailing: Icon(Icons.arrow_forward_ios_rounded),
+      trailing: const Icon(Icons.arrow_forward_ios_rounded),
       iconColor: colors.primary,
       onTap: (){
-        // TODO: Navegar a otras pantallas
+        Navigator.pushNamed(context, menuItem.link);
+        // Tipo navegacion rutas sin nombre
+        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ButtonsScreen()));
       },
     );
   }
